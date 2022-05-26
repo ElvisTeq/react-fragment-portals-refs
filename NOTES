@@ -1,0 +1,66 @@
+#1
+Using "Wrapper" component
+
+- Created a "Wrapper" function that returns (props.children) to replace all <div>
+
+* To prevent <div></div> soup
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#2
+Using "Fragments" in component
+
+----------------------------------------- <React.Fragment> </React.Fragment> (<> </>)
+Build in for react to use
+
+----------------------------------------- import React, { Fragment } from 'react'
+<Fragment> </Fragment>
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#3
+Using "Portal" in component
+
+- Implemented in "ErrorModal.js"
+
+----------------------------------------- import ReactDOM from 'react-dom'
+importing module to use Portal
+
+----------------------------------------- ReactDOM.createPortal(<JSXFunction />, document.getElementById(''))
+To make/portal JSX to run in a different location/component
+(<Content />, Element to add this JSX)
+
+Steps
+
+- 1. Create a <div id='anyName'> in the "index.html"
+
+- 2. Create a Function that returns <JSX />
+
+- 3. Use function in JSX
+     ReactDOM.createPortal(<JSX Anything={props.whatEver} />, document.getElementById('anyName'))
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#4
+Using "Ref's"
+
+---------------------------------------- import React, { useRef } from 'react'
+
+---------------------------------------- const anyName = useRef()
+Creating "ref"
+
+---------------------------------------- ref={anyName}
+Connecting "ref" in JSX
+
+---------------------------------------- anyName.current
+Contains all Data from the JSX
+
+- {anyName}
+  Always is an {object}
+  Has a current props => hold the actual value that is connected with in JSX
+
+* Ex {anyName.current.value} will return the value entered
+  Now we dont't need "useState" to get values
+
+- To read a Value => "useRef"
+- To manipulate a value => "useState"
